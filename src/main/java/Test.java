@@ -13,12 +13,15 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class Test {
+	
+	
 	public static void main(String[] args ) throws ParserConfigurationException, SAXException, IOException
 	{
-		Reader reader = new Reader();
-		String result = reader.getString( new File("C:\\Users\\Erivan\\Desktop\\FamilyHistory.xml"));
+		String[] keywords  = {"dengue", "fever", "disease"};;
+		String[] terms = {"history", "familiar", "ache"};
+		WeightGenerator wg = new WeightGenerator();
 		
-		System.out.println( result);
+		wg.computeISW(keywords, terms);
 	}
 
 }

@@ -8,14 +8,14 @@ public class WeightGenerator
 {
 	private HashMap<String, Double> matrix = new HashMap<String, Double>();
 	
-	public HashMap<String, Double> computeISW( String[] keywords, Reader[] archetypes )
+	public HashMap<String, Double> computeISW( String[] keywords, String[] archetypes )
 	{		
 		
 		for( String keyword : keywords )
 		{
-			for( Reader archetype : archetypes )
+			for( String archetype : archetypes )
 			{
-				String stringPair = new StringPairs(keyword, archetype.getName() ).getString();
+				String stringPair = new StringPairs(keyword, archetype ).getString();
 				matrix.put(stringPair, 0.0);
 			}
 		}
@@ -24,22 +24,16 @@ public class WeightGenerator
 		
 		for( String word : keywords )
 		{
-			for(Reader archetype : archetypes)
+			for(String archetype : archetypes)
 			{
 				double similarity = 0;
 				
-				String[] archetypeWords = archetype.getListOfAchetypeWords();
-				
-				for(String archetypeWord : archetypeWords )
-				{
-					if( jaccard.similarity(word, archetypeWord) > similarity ) 
+					if( jaccard.similarity(word, archetype) > similarity ) 
 					{
-						similarity = jaccard.similarity(word, archetypeWord);
+						similarity = jaccard.similarity(word, archetype);
 					}
-				}
-								
-				matrix.put(word , similarity * 100);
 				
+				matrix.replace(word , similarity * 100);
 			}
 		}
 		
