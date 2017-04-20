@@ -6,7 +6,7 @@ import org.junit.Test;
 public class WeightGeneratorTest
 {
 	private WeightGenerator generator;
-	String[] keywords  = {"dengue", "fever", "disease", "epidemic"};
+	String[] keywords  = {"dengue", "fever", "ache"};
 	String[] terms = {"history", "familiar", "ache"};
 	private double[][] matrix = new double[keywords.length][terms.length];
 	
@@ -27,8 +27,13 @@ public class WeightGeneratorTest
 		matrix = generator.computeISW(keywords, terms);
 		
 		for( int i = 0; i < keywords.length; i++ )
+		{
 			for( int j = 0; j < terms.length; j++ )
-				assertTrue( matrix[i][j] >= 0 && matrix[i][j] <= 100 );
+			{
+				assertTrue( matrix[i][j] >= 0.0 && matrix[i][j] <= 100.0 );
+				//System.out.print( matrix[i][j] + "| " );
+			}
+		}
 		
 		assertTrue( matrix.length == keywords.length );
 		assertTrue( matrix[0].length == terms.length );
