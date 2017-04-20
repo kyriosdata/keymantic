@@ -1,42 +1,30 @@
-import java.io.File;
-import java.util.Arrays;
-import java.util.HashMap;
-
 import info.debatty.java.stringsimilarity.Jaccard;
 
 public class WeightGenerator 
 {
-	private HashMap<String, Double> matrix = new HashMap<String, Double>();
-	
-	public HashMap<String, Double> computeISW( String[] keywords, String[] archetypes )
+	public double[][] computeISW( String[] keywords, String[] archetypes )
 	{		
+		double[][] matrix = new double[keywords.length][archetypes.length];
 		
-		for( String keyword : keywords )
-		{
-			for( String archetype : archetypes )
-			{
-				String stringPair = new StringPairs(keyword, archetype ).getString();
-				matrix.put(stringPair, 0.0);
+		for( int i = 0; i < keywords.length; i++ ){
+			for( int j = 0; j < archetypes.length; j++ ){
+				matrix[i][j] = 0.0;
 			}
 		}
 		
 		Jaccard jaccard = new Jaccard();
 		
-		for( String word : keywords )
-		{
-			for(String archetype : archetypes)
-			{
+		for( int i = 0; i < keywords.length; i++ ){
+			for( int j = 0; j < archetypes.length; j++ ){
 				double similarity = 0;
 				
-					if( jaccard.similarity(word, archetype) > similarity ) 
-					{
-						similarity = jaccard.similarity(word, archetype);
+					if( jaccard.similarity(keywords[i], archetypes[j]) > similarity ) {
+						similarity = jaccard.similarity(keywords[i], archetypes[j]);
 					}
 				
-				matrix.replace(word , similarity * 100);
+				matrix[i][j] = similarity * 100;
 			}
 		}
-		
-		return matrix;	
+		return matrix;
 	}
 }
