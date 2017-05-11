@@ -7,9 +7,6 @@ public class HigherMappingSelector
 	
 	public double[][] map( double[][] weightsMatrix )
 	{
-		System.out.println(weightsMatrix.length );
-		System.out.println(weightsMatrix[0].length );
-		
 		for( int x = 0; x < weightsMatrix.length; x++ )
 		{
 			double maior = 0;

@@ -23,7 +23,7 @@ public class HigherMappingTest {
 	}
 	
 	@Test
-	public void valueOfHigherMapping()
+	public void valueOfSmallerMappings()
 	{
 		double[][] matrix = {{10.0, 0.0, 20.0, 4.0}, {0.0, 10.0, 5.0, 40} };
 		
@@ -44,20 +44,13 @@ public class HigherMappingTest {
 	}
 	
 	@Test
-	public void test() 
+	public void valueOfHigherMapping()
 	{
-		
+		double[][] matrix = {{10.0, 0.0, 20.0, 4.0}, {0.0, 10.0, 5.0, 40} };
 		
 		double[][] result = selector.map(matrix);
 		
-		for(int x = 0; x < 4; x++ )
-		{
-			for (int y = 0; y < 4; y++ )
-			{
-				System.out.print(result[x][y] + "   ");
-			}
-			System.out.println();
-		}
+		assertEquals(matrix[0][2], result[0][2], 0.01 );
+		assertEquals(matrix[1][3], result[1][3], 0.01 );
 	}
-
 }
