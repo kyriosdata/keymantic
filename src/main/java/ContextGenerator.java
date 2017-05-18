@@ -6,6 +6,18 @@ public class ContextGenerator
 	public double[][] compute(double[][] partialMapToDBTErms, double[][] matrixDePesosDeEsquema, String[] keywords )
 	{
 		matrixDePesosDeValor = matrixDePesosDeEsquema;
+		matrixDePesosDeValor = initializationPass(matrixDePesosDeValor);
+		
+		for(int x = 0; x < matrixDePesosDeValor.length; x++ )
+		{
+			for( int y = 0; y < matrixDePesosDeValor[0].length; y++ )
+			{
+				if(matrixDePesosDeValor[x][y] != 0 )
+				{
+					matrixDePesosDeValor[x][y] = 50;
+				}
+			}
+		}
 		
 		
 		
