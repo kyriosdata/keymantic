@@ -1,5 +1,6 @@
-# keymantic
-AQL é um instrumento significativo para acesso à informação em saúde, contudo, exige fluência de custo significativo para ser adquirido profissionais de saúde. Uma alternativa é gerar consultas AQL a partir de palavras-chave, foco do presente projeto, que faz uso da estratégia conhecida por keymantic.
+# Definições
+- _A_. Conjunto de arquétipos sobre os quais uma consulta AQL é gerada.
+- _q_. Sequência de palavras-chave a ser automaticamente convertida em uma ou mais consultas AQL.
 
 # Plano do projeto
 - Iniciação científica ([aqui](https://docs.google.com/document/d/1mWNLwYy9H4FYTgc9hbmU4QttvOldDwPYqFij8oIkHDE/edit?usp=sharing))
