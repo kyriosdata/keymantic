@@ -2,25 +2,73 @@
 public class ContextGenerator
 {
 	private double[][] matrixDePesosDeValor;
+	private int constante = 50;
+	private KeywordUtilities utilities = new KeywordUtilities();
 	
 	public double[][] compute(double[][] partialMapToDBTErms, double[][] matrixDePesosDeEsquema, String[] keywords )
 	{
 		matrixDePesosDeValor = matrixDePesosDeEsquema;
 		matrixDePesosDeValor = initializationPass(matrixDePesosDeValor);
 		
-		for(int x = 0; x < matrixDePesosDeValor.length; x++ )
+		for(int i = 0; i < keywords.length; i++ )
 		{
-			for( int y = 0; y < matrixDePesosDeValor[0].length; y++ )
+			//verifica se a palavra chave é um nome de arquétipo
+			if( utilities.isArchetypeName(keywords[i]))
 			{
-				if(matrixDePesosDeValor[x][y] != 0 )
+				for( int j = i; j < keywords.length; j++ )
 				{
-					matrixDePesosDeValor[x][y] = 50;
+					if(utilities.isArchetypeName(keywords[j]))
+					{
+						break;
+					}
+					else
+					{
+						keywords[j] = keywords[j] + constante;
+					}
+				} // end of for
+				
+				for( int j = i; j < keywords.length; j-- )
+				{
+					if( utilities.isArchetypeName(keywords[j]))
+					{
+						break;
+					}
+					else
+					{
+						keywords[j] = keywords[j] + constante;
+					}
 				}
-			}
+			} //end of if
+			
+			if( utilities.isOntologyName(keywords[i]))
+			{
+				for( int j = i; j < keywords.length; j++ )
+				{
+					if(utilities.isOntologyName(keywords[j]))
+					{
+						break;
+					}
+					else
+					{
+						keywords[j] = keywords[j] + constante;
+					}
+				} // end of for
+				
+				for( int j = i; j < keywords.length; j-- )
+				{
+					if( utilities.isOntologyName(keywords[j]))
+					{
+						break;
+					}
+					else
+					{
+						keywords[j] = keywords[j] + constante;
+					}
+				}
+			} //end of if
+			
+			
 		}
-		
-		
-		
 		
 		return null;
 	}
