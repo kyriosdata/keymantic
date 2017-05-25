@@ -46,5 +46,37 @@ public class ContextGeneratorTest {
 			}
 		}	
 	}
+	
+	@Test
+	public void computeTest()
+	{
+		double[][] partialMapToDBTErms = {{100, 0, 0}, {0, 0, 0}};
+		double[][] matrixDePesosDeEsquema = {{100, 0, 0}, {0, 0, 0}};;
+		String[] keywords = {"dengue", "fever"};
+		
+		
+		double[][] result = context.compute(partialMapToDBTErms, matrixDePesosDeEsquema, keywords);
+		
+		for (int i = 0; i < result.length; i++) {
+			for (int j = 0; j < result.length; j++) {
+				System.out.println(result[i][j]);
+			}
+			System.out.println();
+		}
+		
+	}
+	
+	@Test
+	public void computeTestReturnIsNotNull()
+	{
+		double[][] partialMapToDBTErms = {{100, 0, 0}, {0, 0, 0}};
+		double[][] matrixDePesosDeEsquema = {{100, 0, 0}, {0, 0, 0}};;
+		String[] keywords = {"dengue", "fever"};
+		
+		
+		double[][] result = context.compute(partialMapToDBTErms, matrixDePesosDeEsquema, keywords);
+		
+		assertFalse(result == null);
+	}
 
 }
