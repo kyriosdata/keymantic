@@ -3,8 +3,12 @@ import info.debatty.java.stringsimilarity.Levenshtein;
 
 public class WeightGenerator 
 {
-	public double[][] computeISW( String[] keywords, String[] archetypeTerms )
+	public double[][] computeISW( String[] keywords )
 	{		
+		KeywordUtilities utilities = new KeywordUtilities();
+		
+		String[] archetypeTerms = utilities.getArchetypeTerms();
+		
 		double[][] matrix = new double[keywords.length][archetypeTerms.length];
 		
 		for( int i = 0; i < keywords.length; i++ ){
