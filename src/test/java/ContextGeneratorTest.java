@@ -55,7 +55,7 @@ public class ContextGeneratorTest {
 		String[] keywords = {"dengue", "fever"};
 		
 		
-		double[][] result = context.compute(partialMapToDBTErms, matrixDePesosDeEsquema, keywords);
+		double[][] result = context.compute(keywords, partialMapToDBTErms, matrixDePesosDeEsquema, keywords);
 		
 		for (int i = 0; i < result.length; i++) {
 			for (int j = 0; j < result.length; j++) {
@@ -74,7 +74,7 @@ public class ContextGeneratorTest {
 		String[] keywords = {"dengue", "fever"};
 		
 		
-		double[][] result = context.compute(partialMapToDBTErms, matrixDePesosDeEsquema, keywords);
+		double[][] result = context.compute(keywords, partialMapToDBTErms, matrixDePesosDeEsquema, keywords);
 		
 		assertFalse(result == null);
 	}

@@ -24,7 +24,7 @@ public class WeightGeneratorTest
 		 * used as parameters for the method computeISW
 		 */
 		
-		matrix = generator.computeISW(keywords, terms);
+		matrix = generator.computeISW(keywords);
 		
 		for( int i = 0; i < keywords.length; i++ )
 		{
