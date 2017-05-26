@@ -1,22 +1,22 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
+
+import javax.security.sasl.SaslException;
 
 public class KeywordUtilities {
 	private ArrayList<String> archetypes = new ArrayList<String>();
-	
+
 	private ArrayList<String> ontologies = new ArrayList<String>();
 
 	public KeywordUtilities() {
-		
+
 		archetypes.add("adverse reaction list");
 		archetypes.add("care plan");
 		archetypes.add("encounter");
 		archetypes.add("event summary");
 		archetypes.add("family history");
 		archetypes.add("health summary");
-		
-		
+
 		ontologies.add("at0000 " + "Family history"
 				+ "Summary information about the significant health-related problems found in family members.");
 	}
@@ -44,14 +44,22 @@ public class KeywordUtilities {
 	}
 
 	public String[] getArchetypeTerms() {
-		ArrayList<String> aux = (ArrayList<String>) Arrays.asList(archetypes);
-
+		ArrayList<String> terms = new ArrayList<String>();
 		Iterator<String> iterator = ontologies.iterator();
 
 		while (iterator.hasNext()) {
-			aux.add(iterator.next());
+			terms.add(iterator.next());
+		}
+		
+		iterator = archetypes.iterator();
+		
+		while (iterator.hasNext()) {
+			terms.add(iterator.next());
 		}
 
-		return (String[]) aux.toArray();
+		String[] result = new String[terms.size()];
+		result = terms.toArray(result);
+				
+		return result;
 	}
 }
