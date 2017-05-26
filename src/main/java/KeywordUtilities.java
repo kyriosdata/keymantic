@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import javax.security.sasl.SaslException;
-
 public class KeywordUtilities {
 	private ArrayList<String> archetypes = new ArrayList<String>();
 
@@ -25,7 +23,7 @@ public class KeywordUtilities {
 		Iterator<String> iterador = archetypes.iterator();
 
 		while (iterador.hasNext()) {
-			if (iterador.next().contains(key)) {
+			if (iterador.next().equals(key)) {
 				return true;
 			}
 		}
@@ -34,6 +32,9 @@ public class KeywordUtilities {
 
 	public boolean isOntologyName(String key) {
 		Iterator<String> iterador = ontologies.iterator();
+
+		if (key.trim().isEmpty())
+			return false;
 
 		while (iterador.hasNext()) {
 			if (iterador.next().contains(key)) {
@@ -50,16 +51,16 @@ public class KeywordUtilities {
 		while (iterator.hasNext()) {
 			terms.add(iterator.next());
 		}
-		
+
 		iterator = archetypes.iterator();
-		
+
 		while (iterator.hasNext()) {
 			terms.add(iterator.next());
 		}
 
 		String[] result = new String[terms.size()];
 		result = terms.toArray(result);
-				
+
 		return result;
 	}
 }
