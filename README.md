@@ -9,5 +9,6 @@ Consulte [aqui](https://docs.google.com/document/d/1btrOFu_vyK8KvXA-zZgPQYrxYref
 
 ### Objetivos específicos
 - Personalizar o método _keymantic_ para o contexto específico de arquétipos. Essa adaptação é um trabalho desconhecido na literatura especializada.
+- A personalização pode incluir o [Lucene](https://lucene.apache.org/) para facilitar a localização do arquétipo de interesse dado um conjunto de palavras chave?
 - Implementar o método personalizado (item acima).
 - Registrar o desempenho do método implementado.
