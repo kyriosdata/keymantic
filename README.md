@@ -1,5 +1,5 @@
 # Objetivo
-Personalizar o _keymantic_ para a produção de consultas AQL a partir de palavras-chave. Noutras palavras, a personlização deverá produzir zero ou mais consultas em AQL a partir das palavras-chave fornecidas, tendo acesso às descrições de arquétipos, registradas usando a linguagem ADL (_Archetype Definition Language_), sem consulta a dados. 
+Definir e implementar estratégia inspirada no _keymantic_ para a produção de consultas AQL (_Archetype Query Language_) a partir de palavras-chave. A estratégia deve produzir zero ou mais consultas em AQL a partir de um conjunto fornecido de palavras-chave, tendo acesso restrito às descrições de arquétipos, registradas usando a linguagem ADL (_Archetype Definition Language_), sem consulta aos dados correspondentes. 
 
 # Plano do projeto
 - Iniciação científica ([aqui](https://docs.google.com/document/d/1mWNLwYy9H4FYTgc9hbmU4QttvOldDwPYqFij8oIkHDE/edit?usp=sharing))
