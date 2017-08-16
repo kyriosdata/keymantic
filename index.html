@@ -2,9 +2,46 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="author" content="Fábio Nogueira de Lucena">
     <title>Keymantic</title>
+    
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
   </head>
-  <body>
+  <body style="font-size: 14pt;width:80%;margin-left: auto;margin-right: auto">
     <h1>Entendendo o keymantic...</h1>
+    
+    <h2>Definições</h2>
+    
+    <h3>Palavra-chave</h3>
+      <p>Uma palavra-chave é uma sequência de caracteres. Exemplos: <i>heart</i>, 
+      a sigla <i>IMC</i>, o valor <i>1200</i> ou ainda <i>80mm/HG</i>.</p>
+      
+      <p>Observe que
+      uma palavra-chave pode conter um ou mais espaços em branco e, nesse caso,
+      a palavra-chave deve ser obrigatoriamente delimitada por aspas duplas. Por 
+      exemplo, o nome próprio <i>"João Carlos"</i>, ou mesmo 
+        <i>"80 mm/HG"</i>.</p>
+    
+      <p>Em consequência, um espaço é um delimitador de palavras-chave, exceto
+    se estiver entre aspas.</p>
+    
+    <h3>Conjunto de arquétipos</h3>
+      <p>Um conjunto de arquétipos $A = \{a_1, a_2, \ldots, a_n\}$ reúne zero ou
+      mais arquétipos $a_i$, onde $0\lt i \leq n$.</p>
+    
+      <p>Um arquétipo pode, ao longo do tempo, ser alterado, o que resulta
+    em uma versão. Aqui, cada versão de um mesmo arquétipo é tratado como
+    uma arquétipo distinto.</p>
+    
+    <h3>Consulta baseada em palavras-chave</h3>
+    Uma consulta $q$ é uma sequência de palavras-chave, ou seja, 
+    $q = (k_1,k_2,\ldots,k_j)$ onde $j$ é o total de palavras-chave da
+    consulta. Adicionalmente a palavra-chave $k_m$ ocorre imediatamente após $k_{m-1}$ e 
+    imediatamente antes de $k_{m+1}$ para $1\lt m\lt j$.
   </body>
 </html>
