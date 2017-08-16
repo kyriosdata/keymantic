@@ -5,7 +5,7 @@ Definir e implementar estratégia inspirada no _keymantic_ para a produção de 
 - Iniciação científica ([aqui](https://docs.google.com/document/d/1mWNLwYy9H4FYTgc9hbmU4QttvOldDwPYqFij8oIkHDE/edit?usp=sharing))
 
 # Documentação
-Consulte [aqui](https://docs.google.com/document/d/1btrOFu_vyK8KvXA-zZgPQYrxYrefEFDECHPvHXKQKXg/edit#).
+Consulte [aqui](https://kyriosdata.github.io/keymantic).
 
 ### Objetivos específicos
 - Personalizar o método _keymantic_ para o contexto específico de arquétipos. Essa adaptação é um trabalho desconhecido na literatura especializada.
