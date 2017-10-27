@@ -52,10 +52,19 @@
     <h2>Por quê o Keymantic é importante?</h2>
     As buscas com palavras-chave são a principal forma de pesquisa por informações na web. Contudo, atualmente apenas uma pequena
     fatia dos das informações acessadas na web são pesquisaveis através dos métodos de pesquisa tradicionais, uma vez que a maior
-    parte dos dados da web estão armazenados em bancos de dados e estes oferecem suporte limitado para consultas com palavras-chave.
+    parte dos dados da web estão armazenados em bancos de dados relacionais e estes oferecem suporte limitado para consultas com palavras-chave.
     
     Neste cenário, o Keymantic se apresenta como uma opção e forte referência para o acesso a esses dados, que compõe o que chamamos
-    de "Web invisivel"
+    de "Web invisivel", primeiro porque ele não exige do usuário, um conhecimento prévio da estrutura do banco de dados e, segundo,
+    porque não exige dominio de nenhuma linguagem estruturada como SQL.
+    
+    <h2>A fases do Keymantic</h2>
+    
+    <h3> Pré-processamento</h3>
+    Nessa fase é feita a "limpeza" da consulta, ou seja, remover dela as palavras chaves que não possuem nenhum significado real
+    na base de dados. Outra tarefa importante dessa fase é a segmentação da consulta de forma que palavras chaves que precisem estar
+    juntas para manter seu significado sejam mapeadas como um unico termo. Esta fase é dividida em duas etapas: Verificação de
+    função agregada/valores compostos/ordenação e Expansão da consulta.
     
   </body>
 </html>
