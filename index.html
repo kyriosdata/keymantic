@@ -70,7 +70,7 @@
     
     
     <h4> Pré-processamento</h4>
-    Nesta etapa é feita a "limpeza" da consulta, ou seja, remover dela as palavras chaves que não possuem nenhum significado real
+    Nesta etapa é feita a "limpeza" da consulta, ou seja, são removidas dela as palavras chaves que não possuem nenhum significado real
     na base de dados. Outra tarefa importante dessa fase é a segmentação da consulta de forma que palavras chaves que precisem estar
     juntas para manter seu significado sejam mapeadas como um unico termo. Esta fase é dividida em duas etapas: Verificação de
     função agregada/valores compostos/ordenação e Expansão da consulta.
@@ -86,15 +86,12 @@
     Neste passo, a ferramenta keymantic utiliza uma versão modificada do algoritmo Hungarian para  gerar uma série de mapeamentos entre
     as palavras-chave e os termos de esquema da submatriz SW (a submatriz SW é o conjunto de colunas da matriz de pesos cujas
     colunas representam termos de esquema do banco de dados, por exemplo, o nome de um atributo de tabela).
-    Para gerar um mapeamento, é identificado o maior peso de cada linha da tabela, a intesecções de cada linha (uma palavra-chave) com a
+    Para gerar um mapeamento, é identificado o maior peso de cada linha da tabela, a intesecção de cada linha (uma palavra-chave) com a
     coluna (um termo de esquema) onde está o valor máximo forma uma mapeamento entre palavras-chave e termos do banco de dados. Esse processo
-    segue até que a quantidade de mapeamentos desejada seja gerada e sempre que um mapeamento é gerado os valores máximos utilizado são
-    removidos, para permitir a geração de um novo mapeamentos entre palavras chave e mapeamentos diferentes. O primeiro mapeamento é considerado
-    melhor que o segundo, e cada mapeamento subsequente é considerado melhor que o anterior.
-    
-    Neste primeiro passo os termos existentes na pesquisa são mapeados através da matriz de pesos
-    para indicar se aquele termo será interpretado como um termo de esquema ou de valor. O calculo desses
-    pesos é feito a partir do uso de algoritmos especificos para esta tarefa.
+    segue até que a quantidade de mapeamentos desejada seja gerada e sempre que um mapeamento é gerado os valores máximos caracterizados
+    como máximos são
+    removidos, para permitir a geração de um novo mapeamento entre palavras chave e mapeamentos diferentes. 
+    O primeiro mapeamento é considerado melhor que o segundo, e cada mapeamento sequente é considerado melhor que o anterior.
     
     
     
