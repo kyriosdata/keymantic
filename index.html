@@ -60,8 +60,7 @@
     
     <h2>Os passos do keymantic</h2>
     O processo de transformação de uma cadeia de caracteres que compoe o conjunto de palavras-chave da consulta até a geração efetiva
-    de um conjunto de uma ou mais palavras consultas para bancos de dados relacionais, que é realizado pelo Keymantic acontece através de
-    acontece através de cinco passos, descritos abaixo.
+    de um conjunto de uma ou mais palavras consultas para bancos de dados relacionais, que é realizado pelo Keymantic acontece através de cinco passos, descritos abaixo.
     Ao longo de processo uma estrutura de dados especial, chamada matriz de pesos é utilizada
     constantemente. Essa é uma matriz bidimensional com uma linha para cada palavra-chave
     na consulta e uma coluna para cada termo do banco de dados. Os termos do banco de dados
@@ -70,7 +69,7 @@
     a possiveis valores que podem estar presentes nas tuplas do banco de dados.
     
     
-    <h3> Pré-processamento</h3>
+    <h4> Pré-processamento</h4>
     Nesta etapa é feita a "limpeza" da consulta, ou seja, remover dela as palavras chaves que não possuem nenhum significado real
     na base de dados. Outra tarefa importante dessa fase é a segmentação da consulta de forma que palavras chaves que precisem estar
     juntas para manter seu significado sejam mapeadas como um unico termo. Esta fase é dividida em duas etapas: Verificação de
@@ -78,10 +77,26 @@
     Esta é um fase de pré-processamento, ou seja, não é considerada um dos cinco passos do keymantic, mas sim uma fase de preparação
     da palavra da chave para facilitar o trabalho realizados nos passos verdadeiros.
     
-     <h3> Computação de pesos intrisecos de valor e de esquema</h3>
-   Neste primeiro passo os termos existentes na pesquisa são mapeados através da matriz de pesos
+     <h4> Cálculo dos pesos intrisecos de valor e de esquema</h4>
+    Neste primeiro passo os termos existentes na pesquisa são mapeados através da matriz de pesos
     para indicar se aquele termo será interpretado como um termo de esquema ou de valor. O calculo desses
     pesos é feito a partir do uso de algoritmos especificos para esta tarefa.
+    
+    <h4> Seleção dos melhores mapeamentos para o termos de esquema</h4>
+    Neste passo, a ferramenta keymantic utiliza uma versão modificada do algoritmo Hungarian para  gerar uma série de mapeamentos entre
+    as palavras-chave e os termos de esquema da submatriz SW (a submatriz SW é o conjunto de colunas da matriz de pesos cujas
+    colunas representam termos de esquema do banco de dados, por exemplo, o nome de um atributo de tabela).
+    Para gerar um mapeamento, é identificado o maior peso de cada linha da tabela, a intesecções de cada linha (uma palavra-chave) com a
+    coluna (um termo de esquema) onde está o valor máximo forma uma mapeamento entre palavras-chave e termos do banco de dados. Esse processo
+    segue até que a quantidade de mapeamentos desejada seja gerada e sempre que um mapeamento é gerado os valores máximos utilizado são
+    removidos, para permitir a geração de um novo mapeamentos entre palavras chave e mapeamentos diferentes. O primeiro mapeamento é considerado
+    melhor que o segundo, e cada mapeamento subsequente é considerado melhor que o anterior.
+    
+    Neste primeiro passo os termos existentes na pesquisa são mapeados através da matriz de pesos
+    para indicar se aquele termo será interpretado como um termo de esquema ou de valor. O calculo desses
+    pesos é feito a partir do uso de algoritmos especificos para esta tarefa.
+    
+    
     
   </body>
 </html>
