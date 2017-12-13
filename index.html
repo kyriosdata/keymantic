@@ -93,6 +93,18 @@
     removidos, para permitir a geração de um novo mapeamento entre palavras chave e mapeamentos diferentes. 
     O primeiro mapeamento é considerado melhor que o segundo, e cada mapeamento sequente é considerado melhor que o anterior.
     
+    <h4> Seleção dos melhores mapeamentos para termos de valor </h4>
+    Neste passo, para cada mapeamento gerado na passo anterior é gerado um mapeamento para os termos que não foram mapeados naquele
+    mapeamento. Em outras palavras, queremos dizer que se em um mapeamento gerado no passo anterior uma ou mais palavras não foram
+    mapeadas como termos de esquema, então elas serão mapeadas como termos de valor.  
+    Esse mapeamento para termos de valor ocorre em duas etapas: na primeira etapa, os pesos dos termos são atualizados na submatriz
+    VW (a submatriz VW é o conjunt de colunas da matriz de pesos cujas colunas representam termos de valor do banco de dados), de acordo
+    com a proximidade entre as palavras-chave não mapeadas e as palavras-chave mapeadas para termos de esquema. O motivo para essa ação
+    é que geralmente palavras-chave chave relacionadas em uma consulta são escritas proximas, uma da outra.
+    Na segunda etapada, as palavras-chave que ainda não foram mapeadas, são mapeadas novamente por uma algoritmo adaptado do Hungarian,
+    removendo desse mapeamento as palavras que já foram mapeadas para termos de esquema e aplicando um processo de contextualização que
+    atualiza os pesos de cada palavra-chave na matriz SW de acordo com um conjunto de regras.
+    
     
     
   </body>
