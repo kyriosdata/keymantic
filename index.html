@@ -105,6 +105,23 @@
     removendo desse mapeamento as palavras que já foram mapeadas para termos de esquema e aplicando um processo de contextualização que
     atualiza os pesos de cada palavra-chave na matriz SW de acordo com um conjunto de regras.
     
+    <h5> Processo de Contextualização </5>
+    O processo de contextualização utiliza um conjunto de regras para modificar os pesos da termos na matriz VW (na verdade, a contex-
+    tualização também é utilizada para a matriz SW quando duas palavras-chave são mapeadas para um mesmo termo de esquema.)
+    No inicio do processo de contextualização (apenas para o passo três), todos os pesos e linhas da matriz VW correspondentes à palavras-chave que já foram 
+    mapeadas para termos de esquema são definidos como zero, para garantir que elas não sejam mapeadas também como termos de valor.
+    
+    Outras três fazes completam o processo de contextualização e são aplicadas tanto no passo 2 quanto no passo 3.
+    
+    
+    
+    Na primeira fase, para cada palavra-chave K, que já foi mapeada para um termo de esquema, atribui-se um valor constante a todas as 
+    demais palavras-chave entre K e a proxima palavra-chave S, mapeada para um termo de esquema. Essas palavras-chave entre K e S
+    são chamadas de free trailing keywords.
+    Todas as palavras-chave entre a cada palavra-chave K, que já foi mapeada para um termo de esquema e palavra chave J anterior,
+    mapeada para um termo de esquema também recebem um valor constante. Essas palavras entre J e K recebem o nome de free preceding keywords.
+    
+    
     
     
   </body>
