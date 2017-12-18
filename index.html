@@ -121,6 +121,14 @@
     Todas as palavras-chave entre a cada palavra-chave K, que já foi mapeada para um termo de esquema e palavra chave J anterior,
     mapeada para um termo de esquema também recebem um valor constante. Essas palavras entre J e K recebem o nome de free preceding keywords.
     
+    Na segunda fase é acrescentando um valor constante às free trailing keywords e free preceding keywords para termos que representem
+    atributos da mesma relação que A. Ou seja, se alguma dessas palavras-chave estiver mapeada como um termo de valor para outra coluna
+    da mesma tabela, é provavel que ela esteja relacionada a consulta como por exemplo, parte de uma cláusula where.
+    
+     Na terceira fase, novamente é acrescentando um valor constante às free trailing keywords e free preceding keywords de cada palavra-chave
+    k mapeada para um atributo/coluna A cujos proprios atributos/colunas se relacionem a A através de um caminho de junção. É um principio
+    àquele aplicado na segunda fase, porém entre tabelas diferentes de um banco de dados. 
+    
     
     
     
