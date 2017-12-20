@@ -43,7 +43,8 @@
     
     <h2>O que é o Keymantic?</h2>
     O que Keymantic é uma ferramenta que gera uma ou mais consultas para bancos de dados relacionais a partir
-    de uma análise semantica sobre um conjunto de uma ou mais palavras chave.
+    de uma análise semantica sobre um conjunto de uma ou mais palavras chave. A ferramenta não necessita de acesso prévio aos dados
+    do banco, porém os esquema do banco precisa ser conhecido.
     A ferramenta consegue cumprir esta tarefa a partir de uma série de etapas, como o mapeamente das palavras chaves para termos
     de esquema ou de valor do banco de dados, a partir da execução de algoritmos que geram pesos intrísecos para estas plavras-chave;
     seleção dos melhores mapeamentos, baseada na contextualização dos termos e pesos encontrados, geração de configurações e interpretações
@@ -129,7 +130,31 @@
     k mapeada para um atributo/coluna A cujos proprios atributos/colunas se relacionem a A através de um caminho de junção. É um principio
     àquele aplicado na segunda fase, porém entre tabelas diferentes de um banco de dados. 
     
+    <h4> Geração das Configurações</h4>
+    Neste passo, para cada mapeamento para termos de esquema I, e para cada mapeamento para termos de valor J, gerados nos passos anteriores
+    é feita uma combinação IJ, chama de configuração. A pontuação de uma configuração é a soma da pontuação dos dois mampeamentos i, j que
+    a formam.
     
+    <h4> Geração das Interpretações</h4>
+    Neste passo são geradas as interpretações para as configurações existentes. Cada interpretação consiste em uma consulta SQL.
+    A keymantic utiliza uma abordagem gulosa para atender a todas as possibilides de interpretações quando existem caminhos de junção entre
+    os termos da configuração.
+    Para realizar essa abordagem, é construido um grafo onde cada nó representa um termo do banco de dados e uma aresta conceta esses nós
+    se existe uma relação de chave primária e chave estrangeira entre seus termos.
+    
+    Data uma configuração, todos os termos que fazem parte desta configuração são marcados no grafo. Então é feita uma busca em largura para
+    encontrar os caminhos que conectam estes termos. A consulta é então construida usando os termos marcados, de forma a colocar as tabelas
+    na cláusula FROM, as condições de integridade referencial modeladas pela aresta na cláusula WHERE e os atributos na cláusula SELECT.
+    
+    
+      <h2>Algumas limitações da Keymantic</h2>
+    
+    <ul>
+      <li> Só é capaz de mapear uma palavra-chave para um único termo do banco de dados. </li>
+       <li> Supõe que todas as palavras-chave de uma consulta representam algum termo do banco de dados. </li>
+       <li> Não ordena as consultas SQL geradas. </li>
+      
+    </ul>
     
     
   </body>
