@@ -18,6 +18,9 @@
     
     <h2>Definições</h2>
     
+    <h3>Banco de dados</h3>
+    Defina AQUI!
+    
     <h3>Palavra-chave</h3>
       <p>Uma palavra-chave é uma sequência de caracteres. Exemplos: <i>heart</i>, 
       a sigla <i>IMC</i>, o valor <i>1200</i> ou ainda <i>80mm/HG</i>.</p>
@@ -41,6 +44,17 @@
     consulta. Adicionalmente a palavra-chave $k_m$ ocorre imediatamente após $k_{m-1}$ e 
     imediatamente antes de $k_{m+1}$ para $1\lt m\lt j$.
     
+    <h3>Matriz de pesos</h3>
+    Matriz bidimensional com uma linha para cada palavra-chave
+    da consulta e uma coluna para cada termo do esquema???!!!
+    
+    
+    <h3>Termo de esquema</h3>
+    É uma operação, nome de tabele ou nome de coluna do esquema. Por exemplo, ...COMPLEMENTE AQUI.
+    
+    <h3>Termo de valor</h3>
+    É um possível valor que pode estar presente em uma tupla do banco de dados. 
+    
     <h2>O que é o Keymantic?</h2>
     Keymantic é um algoritmo que gera zero ou mais consultas em SQL a partir
     de um conjunto de palavras-chave de entrada e de um esquema.
@@ -54,17 +68,9 @@
     em bancos de dados relacionais, para os quais o suporte para consultas por palavras-chave é limitado. O
     Keymantic é uma proposta para permitir a consulta em bancos de dados relacionais por meio de palavras-chave.
     
-    
-    <h2>Os passos do keymantic</h2>
-    O processo de transformação de uma cadeia de caracteres que compoe o conjunto de palavras-chave da consulta até a geração efetiva
-    de um conjunto de uma ou mais palavras consultas para bancos de dados relacionais, que é realizado pelo Keymantic acontece através de cinco passos, descritos abaixo.
-    Ao longo de processo uma estrutura de dados especial, chamada matriz de pesos é utilizada
-    constantemente. Essa é uma matriz bidimensional com uma linha para cada palavra-chave
-    na consulta e uma coluna para cada termo do banco de dados. Os termos do banco de dados
-    podem ser termos de valor ou de esquema. Os termos de esquema referem-se as operações, nomes de
-    tabelas ou nomes de colunas nas tabelas do banco de dados, enquanto que os termos de valor referem-se
-    a possiveis valores que podem estar presentes nas tuplas do banco de dados.
-    
+    <h2>Keymantic: cinco passos</h2>
+    O processo de transformação de um conjunto de palavras-chave em consultas SQL 
+    é dividido em cinco passos, que fazem uso de uma estrutura de dados comum, a matriz de pesos.  
     
     <h4> Pré-processamento</h4>
     Nesta etapa é feita a "limpeza" da consulta, ou seja, são removidas dela as palavras chaves que não possuem nenhum significado real
