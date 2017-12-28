@@ -42,22 +42,18 @@
     imediatamente antes de $k_{m+1}$ para $1\lt m\lt j$.
     
     <h2>O que é o Keymantic?</h2>
-    O que Keymantic é uma ferramenta que gera uma ou mais consultas para bancos de dados relacionais a partir
-    de uma análise semantica sobre um conjunto de uma ou mais palavras chave. A ferramenta não necessita de acesso prévio aos dados
-    do banco, porém os esquema do banco precisa ser conhecido.
-    A ferramenta consegue cumprir esta tarefa a partir de uma série de etapas, como o mapeamente das palavras chaves para termos
-    de esquema ou de valor do banco de dados, a partir da execução de algoritmos que geram pesos intrísecos para estas plavras-chave;
-    seleção dos melhores mapeamentos, baseada na contextualização dos termos e pesos encontrados, geração de configurações e interpretações
-    para estas palavras-chave.
+    Keymantic é um algoritmo que gera zero ou mais consultas em SQL a partir
+    de um conjunto de palavras-chave de entrada e de um esquema.
     
-    <h2>Por quê o Keymantic é importante?</h2>
-    As buscas com palavras-chave são a principal forma de pesquisa por informações na web. Contudo, atualmente apenas uma pequena
-    fatia dos das informações acessadas na web são pesquisaveis através dos métodos de pesquisa tradicionais, uma vez que a maior
-    parte dos dados da web estão armazenados em bancos de dados relacionais e estes oferecem suporte limitado para consultas com palavras-chave.
+    O processo de geração das consultas é dividido em passos. O restante deste texto tem o objetivo
+    de explicar cada uma destas etapas. Antes, contudo, convém esclarecer a motivação para o trabalho.
     
-    Neste cenário, o Keymantic se apresenta como uma opção e forte referência para o acesso a esses dados, que compõe o que chamamos
-    de "Web invisivel", primeiro porque ele não exige do usuário, um conhecimento prévio da estrutura do banco de dados e, segundo,
-    porque não exige dominio de nenhuma linguagem estruturada como SQL.
+    <h2>Por que o Keymantic é importante?</h2>
+    As buscas com palavras-chave são a principal forma de pesquisa por informações na web. Contudo, apenas parte
+    das informações podem ser recuperadas desta forma, dado que parte significativa dos dados estão armazenados
+    em bancos de dados relacionais, para os quais o suporte para consultas por palavras-chave é limitado. O
+    Keymantic é uma proposta para permitir a consulta em bancos de dados relacionais por meio de palavras-chave.
+    
     
     <h2>Os passos do keymantic</h2>
     O processo de transformação de uma cadeia de caracteres que compoe o conjunto de palavras-chave da consulta até a geração efetiva
