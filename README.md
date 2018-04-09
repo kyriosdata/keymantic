@@ -1,3 +1,7 @@
+﻿# Branch (erivan)
+Criado para identificar com precisão todas as contribuições do erivan ao projeto,
+dessa forma, mantendo um registro histórico do que foi realizado. 
+
 # Objetivo
 Definir e implementar estratégia inspirada no _keymantic_ para a produção de consultas AQL (_Archetype Query Language_) a partir de palavras-chave. A estratégia deve produzir zero ou mais consultas em AQL a partir de um conjunto fornecido de palavras-chave, tendo acesso restrito às descrições de arquétipos, registradas usando a linguagem ADL (_Archetype Definition Language_), sem consulta aos dados correspondentes. 
 
